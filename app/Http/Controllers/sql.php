@@ -24,7 +24,37 @@ class sql extends Controller
         return view('sql.table', compact('nom', 'affiche'));
     }
 
-    private function removeaccent($table)
+    public function ajouter()
+    {
+        $table = $this->removeaccent($_GET['table']);
+        $nom = Schema::getColumnListing($table);
+        $query = 'insert into '.$table.' (';
+        for ($i=0; $i < count($nom); $i++) { 
+            if ($i != 0) {
+                $query .= ', ';
+            }
+            $query .= $nom[$i];
+        }
+        $query .= ') values (';
+        for ($i=0; $i < count($nom); $i++) { 
+            if ($i != 0) {
+                $query .= ', ';
+            }
+            $query .= '"'.$_GET[$nom[$i]].'"';
+        }
+        $query .= ')';
+        DB::insert($query);
+        return redirect('table?table='.$_GET['table'].'');
+    }
+
+    public function delete()
+    {
+        $table = $this->removeaccent($_GET['table']);
+        DB::delete('delete FROM '.$table.' where id = '.$_GET['delete'].'');
+        return redirect('table?table='.$_GET['table'].'');
+    }
+
+    private function removeaccent($input)
     {
         $replace = array(
             'ъ'=>'-', 'Ь'=>'-', 'Ъ'=>'-', 'ь'=>'-',
@@ -69,6 +99,6 @@ class sql extends Controller
             'Ы'=>'y', 'ž'=>'z', 'З'=>'z', 'з'=>'z', 'ź'=>'z', 'ז'=>'z', 'ż'=>'z', 'ſ'=>'z', 'Ж'=>'zh', 'ж'=>'zh'
         );
 
-        return strtolower(strtr($table, $replace));
+        return strtolower(strtr($input, $replace));
     }
 }

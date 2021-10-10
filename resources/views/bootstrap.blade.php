@@ -12,6 +12,7 @@
         body {
             background-color: grey;
         }
+
         .popup {
             position: fixed;
             top: 50%;
@@ -19,18 +20,27 @@
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
+
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand">Agenda</a>
-        </div>
+            <a class="navbar-brand" href="/">Agenda</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="sql">gérer la base de données</a>
+                      </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <div class="container">
+
         @yield('content')
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
