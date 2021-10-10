@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\agenda;
+use App\Http\Controllers\sql;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [agenda::class, 'affiche']);
+
+Route::get('sql', [sql::class, 'affiche']);
+
+Route::get('table', [sql::class, 'table']);
