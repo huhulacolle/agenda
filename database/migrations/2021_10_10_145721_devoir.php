@@ -15,7 +15,7 @@ class Devoir extends Migration
     {
         Schema::create('devoirs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom');
+            $table->integer('nom');
             $table->string('devoir');
             $table->date('date');
         });
