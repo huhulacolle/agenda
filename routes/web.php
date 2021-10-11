@@ -18,10 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [agenda::class, 'affiche']);
 
-Route::get('sql', [sql::class, 'affiche']);
-
-Route::get('table', [sql::class, 'table']);
-
-Route::get('sqlajouter', [sql::class, 'ajouter']);
-
-Route::get('sqldelete', [sql::class, 'delete']);
+Route::get('ajouterunprof', [sql::class, 'ajouterprof']);

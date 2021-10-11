@@ -31,14 +31,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="sql">gérer la base de données</a>
                       </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container">
-
+        @if ($_SERVER['PHP_SELF'] != '/index.php')
+            <br>
+            <a href="/" class="btn btn-dark">Retour</a>
+        @endif
         @yield('content')
 
     </div>
