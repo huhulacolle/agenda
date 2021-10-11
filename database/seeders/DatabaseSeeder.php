@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\devoir;
 use App\Models\matiere;
-use App\Models\table;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,15 +25,6 @@ class DatabaseSeeder extends Seeder
             )
         ));
 
-        table::insert(array(
-            array(
-                'nom'=> 'Matières',
-            ),
-            array(
-                'nom'=> 'Devoirs',
-            ),
-        ));
-
         matiere::insert(array(
             array(
                 'nom'=> 'Réseau',
@@ -54,7 +44,7 @@ class DatabaseSeeder extends Seeder
             ),
             array(
                 'nom'=> 'CyberStructure',
-                'prof' => 'Larcher'
+                'prof' => 'Rakouchy'
             ),
         ));
     }
