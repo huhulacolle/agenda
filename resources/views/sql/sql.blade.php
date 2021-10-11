@@ -13,6 +13,18 @@
                         </td>
                     </tr>
                 @endforeach
+                <form action="ajoutertable" method="get">
+                    <tr>
+                        <td style="text-align: center">
+                            <input type="text" name="table" placeholder="Ajouter">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit">Ajouter</button>
+                        </td>
+                    </tr>
+                </form>
             </tbody>
         </table>
     </div>
