@@ -2,9 +2,7 @@
 @section('content')
 <a href="/sql">retour</a>
 <div style="text-align: center">
-    @if ($_GET['table'] == 'Devoirs')
-        Accès interdit
-    @else
+
         <table class="table">
             <thead>
                 @foreach ($nom as $req)
@@ -46,7 +44,7 @@
                     </form>
                 </tr>
             </tbody>
-        </table>
-    @endif
+    </table>
+    
 </div>
 @endsection
