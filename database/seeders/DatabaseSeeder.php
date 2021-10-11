@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\devoir;
 use App\Models\matiere;
 use App\Models\table;
 use Illuminate\Database\Seeder;
@@ -15,6 +16,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        // pour le debug
+        devoir::insert(array(
+            array(
+                'nom' => 2,
+                'devoir' => 'DM',
+                'date' => date('Y-m-d', strtotime('+10 days'))
+            )
+        ));
+
         table::insert(array(
             array(
                 'nom'=> 'Matières',
