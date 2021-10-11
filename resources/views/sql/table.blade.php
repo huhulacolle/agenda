@@ -1,12 +1,11 @@
 @extends('bootstrap')
 @section('content')
-<a href="/sql">retour</a>
-<div style="text-align: center">
-
+    <a href="/sql">retour</a>
+    <div style="text-align: center">
         <table class="table">
             <thead>
                 @foreach ($nom as $req)
-                <th scope="col">{{$req}}</th>
+                    <th scope="col">{{$req}}</th>
                 @endforeach
                 <th scope="col" colspan="2">&ensp;</th>
             </thead>
@@ -44,7 +43,6 @@
                     </form>
                 </tr>
             </tbody>
-    </table>
-    
-</div>
+        </table>    
+    </div>
 @endsection
