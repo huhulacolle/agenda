@@ -4,7 +4,7 @@
     <table class="table">
         <thead>
             <th scope="col">id</th>
-            <th scope="col">nom</th>
+            <th scope="col">Matières</th>
             <th scope="col">prof</th>
             <th scope="col">&ensp;</th>
         </thead>

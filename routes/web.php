@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [agenda::class, 'affiche']);
 
+Route::get('ajouterundevoir', [agenda::class, 'ajouterdevoir']);
+
 Route::get('ajouterunprof', [sql::class, 'ajouterprof']);
 
 Route::get('plusprof', [sql::class, 'ajouter']);
