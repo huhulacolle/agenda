@@ -11,11 +11,12 @@ class agenda extends Controller
 {
     public function affiche()
     {
-        // $prof = matiere::select('*')->get();
-        return $this->devoirterminer(devoir::select('*')->get());
-        // $affiche = devoir::select('date', 'devoir', 'matieres.nom', 'matieres.prof')
-        // ->join('matieres', 'matieres.id', '=', 'devoirs.nom')->get();
-        // return view('main', compact('affiche', 'prof'));
+        $this->devoirterminer();
+        $prof = matiere::select('*')->get();
+        $affiche = devoir::select('date', 'devoir', 'matieres.nom', 'matieres.prof')
+        ->join('matieres', 'matieres.id', '=', 'devoirs.nom')->orderby('date')->get();
+        return view('main', compact('affiche', 'prof'));
+        
     }
 
     public function ajouterdevoir()
@@ -28,8 +29,13 @@ class agenda extends Controller
         return redirect('/');
     }
 
-    private function devoirterminer($date)
+    private function devoirterminer()
     {
-        return $date;
+        $date = devoir::select('date')->get();
+        foreach ($date as $sql) {
+            if (date('Y-m-d') > $sql -> date) {
+                devoir::where('date', '=', $sql -> date)->delete();
+            }
+        }
     }
 }
