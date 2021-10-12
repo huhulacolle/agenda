@@ -2,7 +2,7 @@
 @section('content')
     <br>
     <a href="ajouterunprof" class="btn btn-dark">Ajouter un prof</a>
-    <a href="ajouterundevoir" class="btn btn-dark ">Ajouter un devoir</a>
+    <a href="ajouterundevoir" class="btn btn-dark float-end">Ajouter un devoir</a>
     <br> <br>
     <table class="table table-dark">
         <thead>
