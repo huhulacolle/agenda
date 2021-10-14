@@ -45,7 +45,7 @@
                                 <td>
                                     <select name="nom" class="form-control">
                                         @foreach ($prof as $sql)
-                                        <option value="{{$sql -> id}}">{{$sql -> prof}}</option>
+                                            <option value="{{$sql -> id}}">{{$sql -> prof}}</option>
                                         @endforeach
                                     </select>
                                 </td>
