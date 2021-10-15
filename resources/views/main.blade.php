@@ -6,24 +6,35 @@
         Ajouter un devoir
     </button>
     <br> <br>
-    <table class="table table-dark">
-        <thead>
-            <th scope="col">Date</th>
-            <th scope="col">Devoir</th>
-            <th scope="col">Matière</th>
-            <th scope="col">prof</th>
-        </thead>
-        <tbody>
-            @foreach ($affiche as $req)
-            <tr class="table-active">
-                <td>{{date('d/m/Y', strtotime($req -> date));}}</td>
-                <td>{{$req -> devoir}}</td>
-                <td>{{$req -> nom}}</td>
-                <td>{{$req -> prof}}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+    @if ($affiche == "[]")
+        <div class="alert alert-dark d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+                <use xlink:href="#check-circle-fill" /></svg>
+            <div>
+                Aucun devoir n'a étais enregistré
+            </div>
+        </div>
+    @else
+        <table class="table table-dark">
+            <thead>
+                <th scope="col">Date</th>
+                <th scope="col">Devoir</th>
+                <th scope="col">Matière</th>
+                <th scope="col">prof</th>
+            </thead>
+            <tbody>
+                @foreach ($affiche as $sql)
+                <tr class="table-active">
+                    <td>{{date('d/m/Y', strtotime($sql -> date));}}</td>
+                    <td>{{$sql -> devoir}}</td>
+                    <td>{{$sql -> nom}}</td>
+                    <td>{{$sql -> prof}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endif
+
 @endsection
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -45,12 +56,12 @@
                                 <td>
                                     <select name="nom" class="form-control">
                                         @foreach ($prof as $sql)
-                                            <option value="{{$sql -> id}}">{{$sql -> prof}}</option>
+                                        <option value="{{$sql -> id}}">{{$sql -> prof}}</option>
                                         @endforeach
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="text" name="devoir" class="form-control" required>
+                                    <input type="text" name="devoir" class="form-control" sqluired>
                                 </td>
                                 <td>
                                     <input type="date" name="date" class="form-control"
