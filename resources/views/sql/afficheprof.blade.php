@@ -3,7 +3,6 @@
     <br><br>
     <table class="table">
         <thead>
-            <th scope="col">id</th>
             <th scope="col">Matières</th>
             <th scope="col">prof</th>
             <th scope="col">&ensp;</th>
@@ -12,16 +11,13 @@
             @foreach ($prof as $sql)
                 <tr>
                     <td>
-                        {{$sql -> id}}
-                    </td>
-                    <td>
                         {{$sql -> nom}}
                     </td>
                     <td>
                         {{$sql -> prof}}
                     </td>
                     <td>
-                        <form action="moinprof" method="get">
+                        <form action="moinprof" method="get" class="d-grid gap-2">
                             <button type="submit" name="id" class="btn btn-dark" 
                             value="{{$sql -> id}}">Supprimer</button>
                         </form>
@@ -29,9 +25,6 @@
                 </tr>
             @endforeach
             <tr>
-                <td>
-                    {{++$sql -> id}}
-                </td>
                 <form action="plusprof" method="get">
                     <td>
                         <input type="text" name="nom" placeholder="nom">
@@ -39,7 +32,7 @@
                     <td>
                         <input type="text" name="prof" placeholder="prof">
                     </td>
-                    <td>
+                    <td class="d-grid gap-2">
                         <button type="submit" class="btn btn-dark">Ajouter</button>
                     </td>
                 </form>

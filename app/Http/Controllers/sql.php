@@ -12,7 +12,7 @@ class sql extends Controller
     {
         $prof = matiere::select('*')->get();
         $devoir = devoir::select('id')->get();
-        return view('sql.afficheprof', compact('prof', 'id'));
+        return view('sql.afficheprof', compact('prof', 'devoir'));
     }
 
     public function ajouter()
