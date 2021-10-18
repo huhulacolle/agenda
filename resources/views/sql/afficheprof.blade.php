@@ -1,5 +1,7 @@
 @extends('bootstrap')
 @section('content')
+    <br>
+    <a href="/" class="btn btn-dark">Retour</a>
     <br><br>
     <table class="table">
         <thead>

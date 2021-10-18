@@ -52,10 +52,7 @@
         </div>
     </nav>
     <div class="container">
-        @if ($_SERVER['PHP_SELF'] != '/index.php')
-            <br>
-            <a href="/" class="btn btn-dark">Retour</a>
-        @endif
+
         @yield('content')
 
     </div>
