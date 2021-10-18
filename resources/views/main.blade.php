@@ -47,7 +47,7 @@
                 <div class="modal-body">
                     <table class="table">
                         <thead>
-                            <th scope="col">Prof/Matière</th>
+                            <th scope="col">Matière</th>
                             <th scope="col">Devoir</th>
                             <th scope="col">Date</th>
                         </thead>
@@ -56,7 +56,7 @@
                                 <td>
                                     <select name="nom" class="form-control">
                                         @foreach ($prof as $sql)
-                                        <option value="{{$sql -> id}}">{{$sql -> prof}}</option>
+                                        <option value="{{$sql -> id}}">{{$sql -> nom}}</option>
                                         @endforeach
                                     </select>
                                 </td>
