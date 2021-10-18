@@ -17,12 +17,20 @@
                         {{$sql -> prof}}
                     </td>
                     <td>
-                        <form action="moinprof" method="get" class="d-grid gap-2">
-                            <button type="submit" name="id" class="btn btn-dark" 
-                            value="{{$sql -> id}}">Supprimer</button>
-                        </form>
+                        @if (isset($id[$i]) && $id[$i] == $sql -> id)
+                            <form action="moinprof" method="get" class="d-grid gap-2">
+                                <button type="submit" name="id" class="btn btn-dark" 
+                                value="{{$sql -> id}}" disabled>Supprimer</button>
+                            </form>
+                        @else
+                            <form action="moinprof" method="get" class="d-grid gap-2">
+                                <button type="submit" name="id" class="btn btn-dark" 
+                                value="{{$sql -> id}}">Supprimer</button>
+                            </form>
+                        @endif
                     </td>
                 </tr>
+                <?php $i++ ?>
             @endforeach
             <tr>
                 <form action="plusprof" method="get">
