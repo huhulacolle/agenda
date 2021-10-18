@@ -24,17 +24,16 @@
             </thead>
             <tbody>
                 @foreach ($affiche as $sql)
-                <tr class="table-active">
-                    <td>{{date('d/m/Y', strtotime($sql -> date));}}</td>
-                    <td>{{$sql -> devoir}}</td>
-                    <td>{{$sql -> nom}}</td>
-                    <td>{{$sql -> prof}}</td>
-                </tr>
+                    <tr class="table-active">
+                        <td>{{date('d/m/Y', strtotime($sql -> date));}}</td>
+                        <td>{{$sql -> devoir}}</td>
+                        <td>{{$sql -> nom}}</td>
+                        <td>{{$sql -> prof}}</td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
     @endif
-
 @endsection
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -56,7 +55,7 @@
                                 <td>
                                     <select name="nom" class="form-control">
                                         @foreach ($prof as $sql)
-                                        <option value="{{$sql -> id}}">{{$sql -> nom}}</option>
+                                            <option value="{{$sql -> id}}">{{$sql -> nom}}</option>
                                         @endforeach
                                     </select>
                                 </td>
