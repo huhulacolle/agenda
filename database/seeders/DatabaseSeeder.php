@@ -17,13 +17,13 @@ class DatabaseSeeder extends Seeder
     {
 
         // pour le debug
-        devoir::insert(array(
-            array(
-                'nom' => 2,
-                'devoir' => 'DM',
-                'date' => date('Y-m-d', strtotime('+10 days'))
-            )
-        ));
+        // devoir::insert(array(
+        //     array(
+        //         'nom' => 2,
+        //         'devoir' => 'DM',
+        //         'date' => date('Y-m-d', strtotime('+10 days'))
+        //     )
+        // ));
 
         matiere::insert(array(
             array(
