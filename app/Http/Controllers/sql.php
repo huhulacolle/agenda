@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\matiere;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\devoir;
 
 class sql extends Controller
 {
@@ -13,7 +11,8 @@ class sql extends Controller
     public function ajouterprof()
     {
         $prof = matiere::select('*')->get();
-        return view('sql.afficheprof', compact('prof'));
+        $devoir = devoir::select('id')->get();
+        return view('sql.afficheprof', compact('prof', 'id'));
     }
 
     public function ajouter()

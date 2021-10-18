@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\devoir;
 use App\Models\matiere;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 
 class agenda extends Controller
 {
     public function affiche()
     {
         $this->devoirterminer();
+        
         $prof = matiere::select('*')->get();
         $affiche = devoir::select('date', 'devoir', 'matieres.nom', 'matieres.prof')
         ->join('matieres', 'matieres.id', '=', 'devoirs.nom')->orderby('date')->get();
