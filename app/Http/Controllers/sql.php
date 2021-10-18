@@ -16,6 +16,9 @@ class sql extends Controller
             $id[$i] = $sql -> id;
             $i++;
         }
+        if (!isset($id)) {
+            return 0;
+        }
         return $id;
     }
 
